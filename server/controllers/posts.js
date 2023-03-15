@@ -2,7 +2,7 @@ const User = require("../models/User.js");
 const Post = require("../models/Post.js");
 
 // CREATE
-export const createPost = async (req, res) => {
+exports.createPost = async (req, res) => {
 	try {
 		const { userId, description, picturePath } = req.body;
 		const user = await User.findById(userId);
@@ -28,7 +28,7 @@ export const createPost = async (req, res) => {
 };
 
 // READ
-export const getFeedPosts = async (req, res) => {
+exports.getFeedPosts = async (req, res) => {
 	try {
 		const posts = await Post.find();
 		res.status(200).json(posts);
@@ -37,7 +37,7 @@ export const getFeedPosts = async (req, res) => {
 	}
 };
 
-export const getUserPosts = async (req, res) => {
+exports.getUserPosts = async (req, res) => {
 	try {
 		const { userId } = req.params;
 		const posts = await Post.find({ userId });
@@ -48,7 +48,7 @@ export const getUserPosts = async (req, res) => {
 };
 
 // UPDATE
-export const likePost = async (req, res) => {
+exports.likePost = async (req, res) => {
 	try {
 		const { id } = req.params;
 		const { userId } = req.body;
