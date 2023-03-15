@@ -9,6 +9,7 @@ const morgan = require("morgan");
 const path = require("path");
 const { fileURLToPath } = require("url");
 const authRoutes = require("./routes/auth.js");
+const userRoutes = require("./routes/users/js");
 const { register } = require("./controllers/auth.js");
 
 // CONFIGURATIONS
@@ -39,6 +40,7 @@ app.post("auth/register", upload.single("picture"), register);
 
 // ROUTES
 app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
