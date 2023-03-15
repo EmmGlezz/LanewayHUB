@@ -18,10 +18,7 @@ const postSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		course: {
-			type: String,
-			required: true,
-		},
+		course: String,
 		description: String,
 		picturePath: String,
 		userPicturePath: String,

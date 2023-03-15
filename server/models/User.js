@@ -46,10 +46,7 @@ const UserSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		course: {
-			type: String,
-			required: true,
-		},
+		course: String,
 	},
 	{ timestamps: true }
 );
