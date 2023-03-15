@@ -14,6 +14,9 @@ const postRoutes = require("./routes/posts.js");
 const { register } = require("./controllers/auth.js");
 const { createPost } = require("./controllers/posts.js");
 const { verifyToken } = require("./middleware/auth.js");
+const User = require("./models/User.js");
+const Post = require("./models/Post.js");
+const { users, posts } = require("./data/index");
 
 // CONFIGURATIONS
 dotenv.config();
@@ -56,5 +59,9 @@ mongoose
 	})
 	.then(() => {
 		app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
+		// ADD SAMPLE DATA ONE TIME
+		// User.insertMany(users);
+		// Post.insertMany(posts);
 	})
 	.catch((err) => console.log(`${err} did not connect`));
