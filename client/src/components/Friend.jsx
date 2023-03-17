@@ -60,7 +60,7 @@ const Friend = ({ friendId, name, subtitle, secondSubtitle, userPicturePath }) =
                         {name}
                     </Typography>
                     <Typography color={medium} fontSize='0.75rem'>
-                        {secondSubtitle} / {subtitle}
+                        {secondSubtitle}  {subtitle}
                     </Typography>
                 </Box>
             </FlexBetween>
