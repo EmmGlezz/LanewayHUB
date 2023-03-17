@@ -3,6 +3,7 @@ import {
 	EditOutlined,
 	SchoolOutlined,
 	WorkOutlineOutlined,
+	FlagOutlined,
 } from "@mui/icons-material";
 import { Box, Typography, Divider, useTheme } from "@mui/material";
 import UserImage from "../../components/UserImage";
@@ -38,7 +39,7 @@ const UserWidget = ({ userId, picturePath }) => {
 		return null;
 	}
 
-	const { firstName, lastName, occupation, course, classmates, friends } = user;
+	const { firstName, lastName, occupation, course, classmates, friends, nationality } = user;
 
 	return (
 		<WidgetWrapper>
@@ -82,9 +83,13 @@ const UserWidget = ({ userId, picturePath }) => {
 					<SchoolOutlined fontSize='large' sx={{ color: main }} />
 					<Typography color={medium}>{course}</Typography>
 				</Box>
-				<Box display='flex' alignItems='center' gap='1rem'>
+				<Box display='flex' alignItems='center' gap='1rem' mb='0.5rem'>
 					<WorkOutlineOutlined fontSize='large' sx={{ color: main }} />
 					<Typography color={medium}>{occupation}</Typography>
+				</Box>
+				<Box display='flex' alignItems='center' gap='1rem'>
+					<FlagOutlined fontSize='large' sx={{ color: main }} />
+					<Typography color={medium}>{nationality}</Typography>
 				</Box>
 			</Box>
             <Divider />
