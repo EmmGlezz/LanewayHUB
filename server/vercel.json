@@ -1,7 +1,7 @@
 {
 	"rewrites": [
-        { "source": "/auth/(.*)", "destination": "/auth" },
-        { "source": "/users/(.*)", "destination": "/users" },
-        { "source": "/posts/(.*)", "destination": "/posts" }
+        { "source": "/auth/(.*)", "destination": "/api" },
+        { "source": "/users/(.*)", "destination": "/api" },
+        { "source": "/posts/(.*)", "destination": "/api" }
     ]
 }
