@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "../../scenes/Navbar/Navbar";
 import FriendListWidget from "../../scenes/widgets/FriendList";
-import MyPostWidget from "../../scenes/widgets/MyPostWidget";
+// import MyPostWidget from "../../scenes/widgets/MyPostWidget";
 import PostsWidget from "../../scenes/widgets/PostsWidget";
 import UserWidget from "../../scenes/widgets/UserWidget";
 
