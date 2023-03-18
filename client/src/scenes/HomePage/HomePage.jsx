@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, useMediaQuery } from "@mui/material";
+import React, {useEffect, useState} from "react";
+import { Box, useMediaQuery, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import Navbar from "../Navbar/Navbar";
 import UserWidget from "../widgets/UserWidget";
@@ -8,11 +8,28 @@ import PostsWidget from "../widgets/PostsWidget";
 import AdvertWidget from "../widgets/AdvertWidget";
 import FriendListWidget from "../widgets/FriendList";
 
+import './HomePage.css'
+
 const HomePage = () => {
 	const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 	const { _id, picturePath } = useSelector((state) => state.user);
 
-	return (
+	const [isLoading, setIsLoading] = useState(true);
+
+	const handleLoading = () => {
+	setIsLoading(false);
+	}
+
+	useEffect(()=>{
+		if (document.readyState === "complete") {
+			handleLoading();
+		  } else {
+			window.addEventListener('load', handleLoading);
+			return () => document.removeEventListener('load', handleLoading);
+		  }
+	},[])
+
+	return !isLoading ? (
 		<Box>
 			<Navbar />
 			<Box
@@ -42,6 +59,19 @@ const HomePage = () => {
 				)}
 			</Box>
 		</Box>
+	) : (
+		<div className="loader-container">
+			<Typography
+					fontWeight='bold'
+					fontSize='2rem'
+					color='primary'
+					className="logo-anim"
+				>
+					Laneway Hub
+				</Typography>
+			<div className="spinner"></div>
+			<div></div>
+      </div>
 	);
 };
 

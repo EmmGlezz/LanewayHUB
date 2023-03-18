@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import { HashRouter, Navigate, Routes, Route } from "react-router-dom";
 import HomePage from "./scenes/HomePage/HomePage";
 import LoginPage from "./scenes/LoginPage/LoginPage";
 import ProfilePage from "./scenes/ProfilePage/ProfilePage";
@@ -15,7 +15,7 @@ const App = () => {
 
 	return (
 		<div className='app'>
-			<BrowserRouter>
+			<HashRouter>
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
 					<Routes>
@@ -30,7 +30,7 @@ const App = () => {
 						/>
 					</Routes>
 				</ThemeProvider>
-			</BrowserRouter>
+			</HashRouter>
 		</div>
 	);
 };
