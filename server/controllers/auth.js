@@ -14,12 +14,13 @@ exports.register = async (req, res) => {
 			nationality,
 			occupation,
 			course,
-			// friends,
+			friends,
 		} = req.body;
 
+		console.log('before salt')
 		const salt = await bcrypt.genSalt();
 		const passwordHash = await bcrypt.hash(password, salt);
-
+		console.log('after salt')
 		const newUser = new User({
 			firstName,
 			lastName,
@@ -29,11 +30,14 @@ exports.register = async (req, res) => {
 			nationality,
 			occupation,
 			course,
-			// friends,
+			friends,
 		});
 		const savedUser = await newUser.save();
+		console.log('after save')
 		res.status(201).json(savedUser);
+		console.log('after status')
 	} catch (error) {
+		console.log('the error is here dude')
 		res.status(500).json({ error: error.message });
 	}
 };
