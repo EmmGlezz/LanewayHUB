@@ -33,11 +33,8 @@ exports.register = async (req, res) => {
 			friends,
 		});
 		const savedUser = await newUser.save();
-		console.log('after save')
 		res.status(201).json(savedUser);
-		console.log('after status')
 	} catch (error) {
-		console.log('the error is here dude')
 		res.status(500).json({ error: error.message });
 	}
 };
