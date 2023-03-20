@@ -36,7 +36,7 @@ const PostWidget = ({
 	const medium = palette.primary.medium;
 
 	const patchLike = async () => {
-		const response = await fetch(`/posts/${postId}/like`, {
+		const response = await fetch(`/api/posts/${postId}/like`, {
 			method: "PATCH",
 			headers: {
 				Authorization: `Bearer ${token}`,
