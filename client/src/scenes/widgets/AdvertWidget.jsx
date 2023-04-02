@@ -27,7 +27,7 @@ const AdvertWidget = () => {
 				width='100%'
 				height='auto'
 				alt='advert'
-				src='/assets/sponsored.jpeg'
+				src='/uploads/sponsored.jpeg'
 				style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
 			/>
 			<FlexBetween>
