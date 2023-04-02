@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, secondSubtitle, userPicturePath }) =
 
 	const patchFriend = async () => {
 		const response = await fetch(
-			`/api/users/${_id}/${friendId}`,
+			`https://laneway-hub-server.onrender.com/users/${_id}/${friendId}`,
 			{
 				method: "PATCH",
 				headers: {

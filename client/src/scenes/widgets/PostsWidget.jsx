@@ -9,7 +9,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 	const token = useSelector((state) => state.token);
 
 	const getPosts = async () => {
-		const response = await fetch("/api/posts", {
+		const response = await fetch("https://laneway-hub-server.onrender.com/posts", {
 			method: "GET",
 			headers: { Authorization: `Bearer ${token}` },
 		});
@@ -18,7 +18,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 	};
 
 	const getUserPosts = async () => {
-		const response = await fetch(`/api/posts/${userId}`, {
+		const response = await fetch(`https://laneway-hub-server.onrender.com/posts/${userId}`, {
 			method: "GET",
 			headers: { Authorization: `Bearer ${token}` },
 		});

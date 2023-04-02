@@ -68,7 +68,7 @@ const Form = () => {
 		formData.append("picturePath", values.picture.name);
 
 		const savedUserResponse = await fetch(
-			"/api/auth/register",
+			"https://laneway-hub-server.onrender.com/auth/register",
 			{
 				method: "POST",
 				body: formData,
@@ -83,7 +83,7 @@ const Form = () => {
 	};
 
 	const login = async (values, onSubmitProps) => {
-		const loggedInResponse = await fetch("/api/auth/login", {
+		const loggedInResponse = await fetch("https://laneway-hub-server.onrender.com/auth/login", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(values),
