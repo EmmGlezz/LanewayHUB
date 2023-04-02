@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
 				width={size}
 				height={size}
 				alt='user'
-				src={`/uploads/${image}`} 
+				src={`https://laneway-hub-server.onrender.com/uploads/${image}`} 
 			/>
 		</Box>
 	);

@@ -27,7 +27,7 @@ const AdvertWidget = () => {
 				width='100%'
 				height='auto'
 				alt='advert'
-				src='/uploads/sponsored.jpeg'
+				src='https://laneway-hub-server.onrender.com/uploads/sponsored.jpeg'
 				style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
 			/>
 			<FlexBetween>
