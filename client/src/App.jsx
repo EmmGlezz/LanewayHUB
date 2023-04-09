@@ -2,6 +2,7 @@ import { HashRouter, Navigate, Routes, Route } from "react-router-dom";
 import HomePage from "./scenes/HomePage/HomePage";
 import LoginPage from "./scenes/LoginPage/LoginPage";
 import ProfilePage from "./scenes/ProfilePage/ProfilePage";
+import DemoPage from "./scenes/DemoPage/DemoPage";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -13,6 +14,7 @@ const App = () => {
 	const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 	const isAuth = Boolean(useSelector((state) => state.token));
 
+	
 	return (
 		<div className='app'>
 			<HashRouter>
@@ -28,6 +30,8 @@ const App = () => {
 							path='/profile/:userId'
 							element={isAuth ? <ProfilePage /> : <Navigate to='/' />}
 						/>
+						{/* DEMO SITE */}
+						<Route path='/demo' element={<DemoPage />} />
 					</Routes>
 				</ThemeProvider>
 			</HashRouter>
